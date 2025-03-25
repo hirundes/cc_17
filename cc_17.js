@@ -4,21 +4,15 @@ class Customer {
         this.name = name;
         this.email = email;
         this.purchaseHistory = [];
-        this.vipLevel = vipLevel;
     }
     addPurchase(amount) {
         this.purchaseHistory.push(amount);
     }
 
-    getTotalSpent() { //Task 3 Override with vipLevel
-        let total = this.purchaseHistory.reduce((total, amount) => total + amount, 0) //Task 3 Override 
-        if (this.vipLevel) {
-            return total * 1.1
-        } else {
-            return total;
-        }
-        }
+    getTotalSpent() { 
+        return this.purchaseHistory.reduce((total, amount) => total + amount, 0) 
     }
+};
 
 
 console.log("----Task 1----")
@@ -80,7 +74,7 @@ console.log("----Task 3----")
 let vipCustomers = new VIPCustomer("Will Smith, willsmith@gmail.com, Platinum")
 vipCustomers.addPurchase(150)
 console.log(`VIP Customer Information: ${vipCustomers.name}`);
-console.log(`Total Spent with 10% Loyalty Bonus: ${vipCustomers.getTotalSpent()}`)
+console.log(`Total Spent with 10% Loyalty Bonus: $${vipCustomers.getTotalSpent()}`)
 
 
 //Task 4
