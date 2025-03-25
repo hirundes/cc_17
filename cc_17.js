@@ -29,7 +29,7 @@ console.log(`Total Spent: $${secondCustomer.getTotalSpent()}`);
 
 //Task 2
 class SalesRep {
-    constructor(name, clients) {
+    constructor(name) {
         this.name = name;
         this.clients = [];
     }
