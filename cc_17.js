@@ -1,6 +1,6 @@
 //Task 1
 class Customer {
-    constructor(name, email, purchaseHistory, vipLevel) {
+    constructor(name, email, vipLevel) {
         this.name = name;
         this.email = email;
         this.purchaseHistory = [];
@@ -50,9 +50,7 @@ class SalesRep {
         } else {
             return 0;
         }
-
-        }
-        
+    }
     }
 
 console.log("----Task 2----")
@@ -83,4 +81,41 @@ let vipCustomers = new VIPCustomer("Will Smith, willsmith@gmail.com, Platinum")
 vipCustomers.addPurchase(150)
 console.log(`VIP Customer Information: ${vipCustomers.name}`);
 console.log(`Total Spent with 10% Loyalty Bonus: ${vipCustomers.getTotalSpent()}`)
+
+
+//Task 4
+let customers = [
+    new Customer("Hirun Desilva", "hirundesilva@gmail.com"),
+    new Customer("Jack Desilva", "jackdesilva@gmail.com"),
+    new VIPCustomer("Will Smith, willsmith@gmail.com, Platinum")
+];
+customers[0].addPurchase(100);
+customers[1].addPurchase(200);
+customers[2].addPurchase(150);
+
+salesRep.clients = [];
+customers.forEach(customer => salesRep.addClient(customer));
+
+let totalRevenue = customers.reduce((sum, customer) => sum + customer.getTotalSpent(), 0);
+
+let over500Spenders = customers.filter(customer => customer.getTotalSpent() > 500);
+
+let customerSummaries = customers.map(customer => ({
+    name: customer.name,
+    totalSpent: customer.getTotalSpent()
+}));
+
+console.log("----Task 4: Client Report System----");
+console.log(`Total Revenue: $${totalRevenue}`);
+
+console.log("High-Spending Customers (>$500):");
+over500Spenders.forEach(customer => 
+    console.log(`${customer.name}: $${customer.getTotalSpent()}`)
+);
+
+console.log("Customer Summary:");
+customerSummaries.forEach(summary => 
+    console.log(`${summary.name}: $${summary.totalSpent}`)
+);
+
 
