@@ -15,7 +15,7 @@ class Customer {
 };
 
 console.log("----Task 1----") //logging new customer creation and total spent after purchases
-let firstCustomer = new Customer("Hirun Desilva", "hirundesilva97@gmail.com") //first customer information
+let firstCustomer = new Customer("John Desilva", "johndesilva@gmail.com") //first customer information
 firstCustomer.addPurchase(100);
 console.log(`Customer Name: ${firstCustomer.name}`);
 console.log(`Total Spent: $${firstCustomer.getTotalSpent()}`);
@@ -78,7 +78,7 @@ console.log(`Total Spent with 10% Loyalty Bonus: $${vipCustomers.getTotalSpent()
 
 //Task 4
 let customers = [   //customer information with regular + VIP and sales
-    new Customer("Hirun Desilva", "hirundesilva@gmail.com"),
+    new Customer("John Desilva", "johndesilva@gmail.com"),
     new Customer("Jack Desilva", "jackdesilva@gmail.com"),
     new VIPCustomer("Will Smith, willsmith@gmail.com, Platinum")
 ];
