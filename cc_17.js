@@ -37,7 +37,7 @@ class SalesRep {
     }
 
     getClientTotal(name) {  //method finds client by name and returns total spent
-        let client = this.client.find(client => client.name === name);
+        let client = this.clients.find(client => client.name === name);
         if (client) {
             return client.getTotalSpent();
         } else {
@@ -70,7 +70,7 @@ class VIPCustomer extends Customer {    //created VIPCustomer class extends Cust
 };
 
 console.log("----Task 3----")   //logging VIP customers total spent with bonus
-let vipCustomers = new VIPCustomer("Will Smith, willsmith@gmail.com, Platinum")
+let vipCustomers = new VIPCustomer("Will Smith", "willsmith@gmail.com", "Platinum")
 vipCustomers.addPurchase(150)
 console.log(`VIP Customer Information: ${vipCustomers.name}`);
 console.log(`Total Spent with 10% Loyalty Bonus: $${vipCustomers.getTotalSpent()}`)
